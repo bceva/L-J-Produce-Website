@@ -3,14 +3,47 @@
         <title>L & J Produce</title>
         <link href="rules.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
     <body>
-        <div class="navbar" role="banner">
+        <header>
             <button id="menu">☰ Catalog</button>
+            <div id="title" href="index.html">L & J Produce</div>
             <button id="cart">Cart</button>
+        </header>
+        <!--this is for the side menu and cart -->
+        <div id="side_menu">
+            <ul>
+                <li><a href="#">Menu Item 1</a></li>
+                <li><a href="#">Menu Item 2</a></li>
+                <li><a href="#">Menu Item 3</a></li>
+                <li><a href="#">Menu Item 4</a></li>
+                <li><a href="#">Menu Item 5</a></li>
+                <li><a href="#">Menu Item 6</a></li>
+            </ul>
         </div>
-        <div id="about"><h3>About Us</h3><br>We are a wholesale produce comapny.</br></div>
-        <div id="produce_bg"><img src="img/produce_stock.jpg" alt="produce stock image"></div>
-        <div id="contact"> Contact</div>
+        <!--back to main content-->
+        <div id="about"><h4>About Us</h4>
+            <br>We are a wholesale produce comapny. <p><br>
+                <p>Filerr ohwefhweo ofgao fqwer qwovfwu  pqrqy wrgwc ap .
+                <br>gewf79wefpq fr8  7bfew9q0feew efweqbfiqw of fqdwonoq w rather pwfu fewpfehweowfgwifg.
+            </br>
+        </div>
+        <div class="contact">
+            <ul>
+                <li id="email"><h4>Email</h4><br>contact@L&Jproduce.com</li>
+                <li id="number"><h4>Number</h4><br>1(800)-123-4567</li>
+                <li id="address"><h4>Address</h4><br>5 Av. Anatole France, 75007 Paris, France</li>
+            </ul>
+        </div>
+        <script>
+            const menu = document.querySelector('#menu')
+            const side_menu = document.querySelector('#side_menu')
+
+            menu.addEventListener('click',() =>{
+                side_menu.classList.toggle('open');
+            });
+        </script>
     </body>
 </html>
