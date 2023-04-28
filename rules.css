@@ -18,9 +18,13 @@ body {
 
 a {
     color:antiquewhite;
-    text-decoration: underline;
+    font-weight: bold;
+    text-decoration: none;
 }
 
+h4{
+    color: green;
+}
 header {
     width: 100%;
     height: 13%;
@@ -52,7 +56,7 @@ header {
     font-size: 1.65em;
     right: auto;
     left: auto;
-    display: inline-block; 
+    display: inline-block;
 }
 
 #cart{
@@ -68,7 +72,7 @@ header {
 }
 
 #about{
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -88,7 +92,7 @@ header {
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
+    width: 40%;
     z-index: 10;
     background: antiquewhite;
     border-radius: 10%;
@@ -101,13 +105,15 @@ header {
 .contact ul{
     list-style: none;
     padding: 5%;
-
+    display: inline-flex;
 
 }
 
 .contact ul li {
-    margin: 10%;
+    margin: 5%;
+    width: 60%;
     text-align: center;
+
     
 }
 

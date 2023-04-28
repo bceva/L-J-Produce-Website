@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>L & J Produce</title>
+        <link href="../rules.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <header>
+            <button id="menu">☰ Catalog</button>
+            <div id="title"><a href="../index.html">L & J Produce</a></div>
+            <button id="cart">Cart</button>
+        </header>
+        <!--this is for the side menu and cart -->
+        <div id="side_menu">
+            <ul>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+            </ul>
+        </div>
+         <!--back to main content-->
+        <script>
+            // const supabaseUrl = 'https://mrwuwcdszsikbbtibldn.supabase.co'
+            // const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yd3V3Y2RzenNpa2JidGlibGRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3NzExNjksImV4cCI6MTk5NzM0NzE2OX0._kdxV_65w944tbi-QTanC_IEiMXbfYAhUgOPgyWd_98'
+            // const supabase = createClient(supabaseUrl, supabaseKey)
+            // const getData = async () => {
+            //     const { data, error } = await supabase
+            //     .from('inventory')
+            //     .select('*');
+
+            //     if (error) {
+            //         console.log(error);
+            //     } else {
+            //         console.log(data)
+            //     }
+            // }
+            const menu = document.querySelector('#menu')
+            const side_menu = document.querySelector('#side_menu')
+
+            menu.addEventListener('click',() =>{
+                side_menu.classList.toggle('open');
+            });
+        </script>
+    </body>
