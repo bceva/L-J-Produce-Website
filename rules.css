@@ -71,7 +71,7 @@ header {
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
+    width: 50%;
     padding: 5%;
     height: fit-content;
     text-align: center;
@@ -85,7 +85,7 @@ header {
 
 
 .contact {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -100,7 +100,7 @@ header {
 
 .contact ul{
     list-style: none;
-    padding: 10%;
+    padding: 5%;
 
 
 }
@@ -124,7 +124,7 @@ header {
 
 #side_menu ul{
     list-style: none;
-    margin-top: 40%;
+    margin-top: 50%;
 
 }
 
