@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url("img/produce_stock.jpg");
+    background-image: url("produce_stock.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,24 +99,33 @@ header {
     border-style: double;
     border-width: 0.5em;
     border-color: green;
-
-}
-
-.contact ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact ul{
     list-style: none;
-    padding: 5%;
-    display: inline-flex;
-
-}
-
-.contact ul li {
-    margin: 5%;
-    width: 60%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .contact ul li {
+    margin: 1em;
+    padding: 0.5em;
+    width: 80%;
     text-align: center;
-
-    
-}
-
+    border: 1px solid green;
+  }
+  
+  
+  
 #side_menu{
     position: fixed;
     height: 100%;
@@ -142,3 +151,10 @@ header {
 #side_menu.open{
     left: 0;
 }
+
+.product {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+  }
+  

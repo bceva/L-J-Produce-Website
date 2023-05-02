@@ -2,7 +2,7 @@
     <head>
         <title>L & J Produce</title>
         <link href="../rules.css" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
@@ -20,26 +20,89 @@
             </ul>
         </div>
          <!--back to main content-->
-        <script>
-            // const supabaseUrl = 'https://mrwuwcdszsikbbtibldn.supabase.co'
-            // const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yd3V3Y2RzenNpa2JidGlibGRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3NzExNjksImV4cCI6MTk5NzM0NzE2OX0._kdxV_65w944tbi-QTanC_IEiMXbfYAhUgOPgyWd_98'
-            // const supabase = createClient(supabaseUrl, supabaseKey)
-            // const getData = async () => {
-            //     const { data, error } = await supabase
-            //     .from('inventory')
-            //     .select('*');
+        <h1>Product List</h1>
+        <div id="products"></div>
+        <script type="module">
+            import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-            //     if (error) {
-            //         console.log(error);
-            //     } else {
-            //         console.log(data)
-            //     }
-            // }
-            const menu = document.querySelector('#menu')
-            const side_menu = document.querySelector('#side_menu')
-
-            menu.addEventListener('click',() =>{
-                side_menu.classList.toggle('open');
+        
+            const initSupabase = async () => {
+                const supabaseUrl = 'https://mrwuwcdszsikbbtibldn.supabase.co';
+                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yd3V3Y2RzenNpa2JidGlibGRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3NzExNjksImV4cCI6MTk5NzM0NzE2OX0._kdxV_65w944tbi-QTanC_IEiMXbfYAhUgOPgyWd_98';
+        
+                const supabase = createClient(supabaseUrl, supabaseKey);
+        
+                return supabase;
+            };
+        
+            document.addEventListener('DOMContentLoaded', async () => {
+                const products = await getProducts();
+                renderProducts(products);
+        
+                // side menu mechanics
+                const menu = document.querySelector('#menu');
+                const side_menu = document.querySelector('#side_menu');
+        
+                menu.addEventListener('click', () => {
+                    side_menu.classList.toggle('open');
+                });
             });
-        </script>
+        
+            const getProducts = async () => {
+                const supabase = await initSupabase();
+        
+                const { data, error } = await supabase
+                    .from('inventory')
+                    .select('product_id, produce_name, price_per_unit, weight_in_grams');
+        
+                if (error) {
+                    console.error(error);
+                    return [];
+                }
+        
+                return data;
+            };
+        
+            const renderProducts = (products) => {
+                const productsDiv = document.getElementById('products');
+                productsDiv.innerHTML = '';
+        
+                products.forEach((product) => {
+                    const { product_id, produce_name, price_per_unit, weight_in_grams } = product;
+                    const imgSrc = `/img/${product_id}.png`;
+        
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product');
+        
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = produce_name;
+        
+                    const name = document.createElement('h2');
+                    name.innerText = produce_name;
+        
+                    const price = document.createElement('p');
+                    price.innerText = `$${price_per_unit.toFixed(2)}`;
+        
+                    const weight = document.createElement('p');
+                    weight.innerText = `${weight_in_grams} g`;
+        
+                    const addToCart = document.createElement('button');
+                    addToCart.innerText = 'Add to Cart';
+        
+                    addToCart.addEventListener('click', () => {
+                        // Modify this function to add the product to your cart
+                        console.log(`Added ${produce_name} to cart`);
+                    });
+        
+                    productDiv.appendChild(img);
+                    productDiv.appendChild(name);
+                    productDiv.appendChild(price);
+                    productDiv.appendChild(weight);
+                    productDiv.appendChild(addToCart);
+                    productsDiv.appendChild(productDiv);
+                });
+            };
+        </script>        
     </body>
+</html>
