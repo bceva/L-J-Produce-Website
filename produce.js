@@ -62,8 +62,8 @@ const getProducts = async (supabase) => {
     
 const initSupabase = async () => {
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_KEY;
+    const supabaseUrl = "https://mrwuwcdszsikbbtibldn.supabase.co"
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yd3V3Y2RzenNpa2JidGlibGRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3NzExNjksImV4cCI6MTk5NzM0NzE2OX0._kdxV_65w944tbi-QTanC_IEiMXbfYAhUgOPgyWd_98";
   
     const supabase = createClient(supabaseUrl, supabaseKey);
   
