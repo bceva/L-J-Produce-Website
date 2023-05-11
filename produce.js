@@ -1,5 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-console.log(import.meta.env)
+
 const renderProducts = (products) => {
     console.log('Rendering products:', products);
     const productsTable = document.createElement('table');
@@ -62,7 +62,7 @@ const getProducts = async (supabase) => {
     
 const initSupabase = async () => {
 
-    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_KEY;
   
     const supabase = createClient(supabaseUrl, supabaseKey);
