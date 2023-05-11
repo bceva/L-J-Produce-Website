@@ -1,5 +1,4 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-import { SUPABASE_URL, SUPABASE_KEY } from './pages/config.js';
 
 const renderProducts = (products) => {
     console.log('Rendering products:', products);
