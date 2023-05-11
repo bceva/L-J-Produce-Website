@@ -1,5 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
+console.log(import.meta.env)
 const renderProducts = (products) => {
     console.log('Rendering products:', products);
     const productsTable = document.createElement('table');
