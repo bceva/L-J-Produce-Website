@@ -62,8 +62,8 @@ const getProducts = async (supabase) => {
     
 const initSupabase = async () => {
 
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_KEY;
+    const supabaseUrl = SUPABASE_URL;
+    const supabaseKey = SUPABASE_KEY;
   
     const supabase = createClient(supabaseUrl, supabaseKey);
   
