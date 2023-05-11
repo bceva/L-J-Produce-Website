@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="menu.js"></script>
     </head>
     <body>
         <header>
             <button id="menu">☰ Catalog</button>
             <div id="title"><a href="index.html">L & J Produce</a></div>
-            <button id="cart">Cart</button>
+            <button class="cart" id="cart"><a href="pages/checkout.html">Your Cart</a></button>
         </header>
         <!--this is for the side menu and cart -->
         <div id="side_menu">
@@ -34,13 +35,5 @@
                 <li id="address"><h4>Address</h4><br>5 Av. Anatole France, 75007 Paris, France</li>
             </ul>
         </div>
-        <script>
-            const menu = document.querySelector('#menu')
-            const side_menu = document.querySelector('#side_menu')
-
-            menu.addEventListener('click',() =>{
-                side_menu.classList.toggle('open');
-            });
-        </script>
     </body>
 </html>
